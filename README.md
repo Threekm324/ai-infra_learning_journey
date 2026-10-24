@@ -1,0 +1,2 @@
+# ai-infra_learning_journey
+有关ai infra以及计算机系统相关的一些知识笔记都将上传于此
