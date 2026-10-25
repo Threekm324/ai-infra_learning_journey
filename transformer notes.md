@@ -39,7 +39,7 @@ day 2 10.25
 取最小值的方法：函数输入空间极大（包括所有的权重值和偏置值）多元函数采用梯度运算，梯度的反方向（负梯度）就是下降速度最快的方向————梯度下降法
 <img width="635" height="370" alt="image" src="https://github.com/user-attachments/assets/8c7700fa-9e34-4179-9401-850e02e40375" />
 
-“让网络学习，实质上就是让代价函数的值最小” 为实现此效果 因此采用连续的activation而非生物上的二元激活状态
+“让网络学习，实质上就是通过找到特定的权重偏置，从而让代价函数的值最小” 为实现此效果 因此采用连续的activation而非生物上的二元激活状态
 
 <img width="631" height="387" alt="image" src="https://github.com/user-attachments/assets/3bdd7e95-30a6-4dfa-a6dc-4e5a3b779461" />
 
