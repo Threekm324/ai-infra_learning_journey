@@ -1,8 +1,11 @@
 day 1 10.24
 
 初步尝试使用GitHub
+
 transformer part
+
 有关深度学习和神经网络的基本运作方式进行了初步了解，3B1B深度学习part1，以图像识别（28*28pixels 0-9数字图像识别）举例
+
 卷积神经网络，上一层所有神经元的激活值会对下一层神经元的激活值产生影响，权重 偏置值 矩阵形式进行计算 sigmoid映射用于压缩加权和至0-1的范围内
 
 <img width="2348" height="1320" alt="dd2e1ea2ba2f3967f5616c92b87882d6" src="https://github.com/user-attachments/assets/0c86b3c3-d31c-4b68-891f-2a0ac800042c" />
