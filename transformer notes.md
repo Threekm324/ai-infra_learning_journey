@@ -51,4 +51,33 @@ day 2 10.25
 
 
 
+（3B1B深度学习3 反向传播算法【BP】）
+作用：用于求上面所提及的那个“能使代价函数下降最快”的 具有13000+个变量的梯度向量
+
+另一套思路：梯度向量的每一个值 除了显示我们应该如何对权重值和偏置值应该如何进行调整之外，同时还彰显了代价函数对于每个参数有多敏感（由梯度向量中每一项的绝对值大小就可以彰显）！
+<img width="629" height="364" alt="image" src="https://github.com/user-attachments/assets/9c0881aa-08ef-47b3-ab55-b9c9e5a9ec53" />
+
+<img width="632" height="358" alt="image" src="https://github.com/user-attachments/assets/e74a4fc3-ed87-4904-8e7f-80db7e437293" />
+<img width="637" height="365" alt="image" src="https://github.com/user-attachments/assets/2d12e5c1-2814-44a9-9161-428897c7e7b9" />
+
+意即，在梯度下降时，不仅看每个参数应如何变化；还看改动哪个参数的性价比最高
+<img width="635" height="351" alt="image" src="https://github.com/user-attachments/assets/54d6ac04-0691-49ef-819c-6de7cbf7d70f" />
+
+即改权重————看激活值；改激活值————看权重
+
+<img width="635" height="363" alt="image" src="https://github.com/user-attachments/assets/1e0d480d-482c-4e08-93ec-31e1b57574fe" />
+
+从期待产生的改变（本层激活值）倒推上一层的激活值、权重和偏置该如何变  以此类推，不断重复循环，即反向传播
+
+<img width="635" height="348" alt="image" src="https://github.com/user-attachments/assets/d9bb6767-5972-4c10-a96a-c33d724567a2" />
+<img width="635" height="364" alt="image" src="https://github.com/user-attachments/assets/59ee2294-d286-4c0a-8473-78eb2794301a" />
+
+<img width="633" height="351" alt="image" src="https://github.com/user-attachments/assets/59453b6a-14d7-4988-a577-930aa26d1213" />
+
+summary：反向传播算法 算的是单个训练样本想怎样修改权重和偏置，包括上升还是下降以及对应比例。从而实现代价最小 但如果要对所有的训练样本都采用此方法再取平均值则成本过高
+         从而出现了【随机梯度下降】（总样本分成若干小块，在每个小块上算梯度？）收敛到代价函数的一个局部最小值上
+         
+<img width="629" height="353" alt="image" src="https://github.com/user-attachments/assets/9fa5f83f-f49a-4e69-b8f0-843aeaa1d7d3" />
+
+“所有包括神经网络在内的机器学习，要让他们工作就需要大量的样本范例。所以机器学习领域的人，最熟悉的一个难关，莫过于获取标记好的训练数据”
 
