@@ -81,3 +81,18 @@ summary：反向传播算法 算的是单个训练样本想怎样修改权重和
 
 “所有包括神经网络在内的机器学习，要让他们工作就需要大量的样本范例。所以机器学习领域的人，最熟悉的一个难关，莫过于获取标记好的训练数据”
 
+
+
+day 3 10.26
+(3B1B深度学习4 有关反向传播算法的微积分解释)
+
+下图为仅包含一个训练样本时 代价对wL的导数
+<img width="631" height="356" alt="image" src="https://github.com/user-attachments/assets/49da0ba1-64f2-41ff-a042-6d9d964da609" />
+链式法则
+
+<img width="633" height="338" alt="image" src="https://github.com/user-attachments/assets/9ab309e4-4009-439d-91e9-14637679f6fd" />
+含有多个样本时的情况————求平均值   跟总的代价函数是所有训练样本代价的总平均是一个道理
+
+zL关于wL的偏导体现了：权重的改变量对最后一层的影响，由上一层神经元的激活值决定
+
+<img width="633" height="338" alt="image" src="https://github.com/user-attachments/assets/94d85499-afc6-4936-94af-8e2c1cd8637c" />
