@@ -86,7 +86,7 @@ summary：反向传播算法 算的是单个训练样本想怎样修改权重和
 day 3 10.26
 (3B1B深度学习4 有关反向传播算法的微积分解释)
 
-下图为仅包含一个训练样本时 代价对wL的导数
+下图举例为仅包含一个训练样本时 代价对wL的导数
 <img width="631" height="356" alt="image" src="https://github.com/user-attachments/assets/49da0ba1-64f2-41ff-a042-6d9d964da609" />
 链式法则
 
@@ -95,4 +95,14 @@ day 3 10.26
 
 zL关于wL的偏导体现了：权重的改变量对最后一层的影响，由上一层神经元的激活值决定
 
-<img width="633" height="338" alt="image" src="https://github.com/user-attachments/assets/94d85499-afc6-4936-94af-8e2c1cd8637c" />
+<img width="626" height="338" alt="image" src="https://github.com/user-attachments/assets/4ae023d8-d8ad-4c15-88b5-df23e9a9b847" />
+负梯度 代价函数涉及每一个权重和偏置
+
+<img width="628" height="353" alt="image" src="https://github.com/user-attachments/assets/835d81c3-82b0-4c45-866d-9cd35d3604bf" />
+代价函数对于上一层激活值的敏感度 虽然无法直接改变上一层的激活值，但由链式法则可以看出实际上是与权重直接相关
+
+<img width="626" height="363" alt="image" src="https://github.com/user-attachments/assets/ef57d4e7-d7f8-43c2-93a4-5e6937d84333" />
+单层多神经元时 几乎和单神经元时没区别。最主要的区别在于总代价函数对上一层的激活值求偏导，此时上一层的a激活值可能会通过j种路径对下一层产生影响（设下一层有j个神经元），因此要将影响相加。
+
+<img width="632" height="368" alt="image" src="https://github.com/user-attachments/assets/b3467e19-950a-4269-a208-3d00d7f28b0e" />
+
