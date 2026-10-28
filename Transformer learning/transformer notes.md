@@ -106,3 +106,54 @@ zL关于wL的偏导体现了：权重的改变量对最后一层的影响，由�
 
 <img width="632" height="368" alt="image" src="https://github.com/user-attachments/assets/b3467e19-950a-4269-a208-3d00d7f28b0e" />
 
+
+day 4 10.28
+(3B1B 深度学习系列5 what is GPT? 直观理解transformer)
+
+GPT :Genertive Pre-trained Transformer 注意此处的generative指的是生成文本
+<img width="642" height="377" alt="image" src="https://github.com/user-attachments/assets/f10ada2c-9f70-4086-b556-bc0e4cfd33c0" />
+许多模型都是基于transformer所构建的 (voice-to-text / text-to-voice / text-to-image...)
+
+构建LLM的transformer的功能：本质仍为概率推断。给一个初始片段，transformer基于上下文对下一个可能的词进行推理，然后加上这个词至文本末尾获得新的文本，再重复推理预测过程。    即  “重复预测与抽样”
+<img width="631" height="362" alt="image" src="https://github.com/user-attachments/assets/31f2d56b-f3ac-4ab7-8874-160cc37f857a" />
+
+--transformer中的数据流动方式（当LLM生成特定单词时背后的行为）
+1. 拆分输入内容成若干token （可为词、词组、小块图像、音频片段等）。token——一个向量，编码片段含义。（相当于根据含义的不同给token分配空间坐标，含义越接近的坐标越近。）
+
+2. “注意力模块”（attention block）
+   向量被传到注意力模块后使得彼此之间能够相互“交流”，并且更新含义向量（实现基于上下文），避免孤立翻译token导致语句不通
+注意力模块的作用：
+<img width="637" height="371" alt="image" src="https://github.com/user-attachments/assets/61a3afba-9af0-40b2-9851-046c5e859bca" />
+<img width="638" height="348" alt="image" src="https://github.com/user-attachments/assets/c1dcb00c-34d8-41a9-9413-ac3c0eaf97c3" />
+
+3.Multilayer Perception（多层感知器）/Feed-Forward layer（前馈层）
+    向量间不再交流，而是“并行经历同一处理”
+
+<img width="639" height="368" alt="image" src="https://github.com/user-attachments/assets/6007f97b-4fdc-4a71-aca7-f641531e7140" />
+机器学习 “不要试图在代码中 明确定义如何实现一个任务”（ai发展初期的行为）
+而应该去构建一个“具有可调参数的灵活架构”，根据大量的训练样本以进行调试和模拟，不断提高模型能力。
+
+但问题是：并不是一味地直接扩大模型参数量就行了，可能会出现过拟合或者完全训练不出来的情况
+规避方法？反向传播算法
+
+反向传播方法对模型结构有要求：
+<img width="633" height="380" alt="image" src="https://github.com/user-attachments/assets/4267ef4b-7a2d-43cc-94a9-706ea592b358" />
+数组的维数没有限制
+
+<img width="629" height="367" alt="image" src="https://github.com/user-attachments/assets/693ac017-4ec5-4140-a256-0d96def4ab47" />
+<img width="635" height="362" alt="image" src="https://github.com/user-attachments/assets/e0353207-8b99-48c7-8501-4a56e57b6e66" />
+注意权重矩阵中的每一个权重值都是“可调的”，作为变换工具
+
+<img width="635" height="374" alt="image" src="https://github.com/user-attachments/assets/eb01831c-7be3-44b3-acf1-28033e274090" />
+
+权重———“大脑”，决定模型的行为模式；
+待处理数据————作为一次次的输入数据
+<img width="635" height="366" alt="image" src="https://github.com/user-attachments/assets/3da80a9c-0f6e-4217-bab3-99314612b3f9" />
+
+
+
+Embedding matrix（基于预设词汇库）
+将输入文本分成若干token，再转为向量时所需用到的矩阵————每个单词对应一组列向量
+
+Q？嵌入矩阵中是一个token对应一个列向量还是就是一个词对应一个列向量，token的包含范围会随着训练样本的不断增加而改变吗？比如说原本1个token对应一个单词，后来1个token对应一个词组（缓存命中？合并同类项，减少重复建设花费？）
+<img width="635" height="380" alt="image" src="https://github.com/user-attachments/assets/fd9b44ea-8458-4784-bd92-06cd6f263a75" />
