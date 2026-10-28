@@ -154,12 +154,35 @@ GPT :Genertive Pre-trained Transformer 注意此处的generative指的是生成�
 
 
 
-Embedding matrix（基于预设词汇库）
+————Embedding matrix（基于预设词汇库）————
+模型中的第一组权重
 将输入文本分成若干token，再转为向量时所需用到的矩阵————每个单词对应一组列向量
 
 Q？嵌入矩阵中是一个token对应一个列向量还是就是一个词对应一个列向量，token的包含范围会随着训练样本的不断增加而改变吗？比如说原本1个token对应一个单词，后来1个token对应一个词组（缓存命中？合并同类项，减少重复建设花费？）
 
 <img width="635" height="380" alt="image" src="https://github.com/user-attachments/assets/fd9b44ea-8458-4784-bd92-06cd6f263a75" />
 <img width="632" height="358" alt="image" src="https://github.com/user-attachments/assets/53b0257e-820c-4bd6-9d6b-9a5a627f820f" />
+
+嵌入的向量在空间中的方向 往往具有某种语义意义
+
+<img width="638" height="374" alt="image" src="https://github.com/user-attachments/assets/d0adf613-c251-40c6-a6eb-f3738e180561" />
+
+<img width="641" height="365" alt="image" src="https://github.com/user-attachments/assets/f2c01c0c-f947-447a-8115-8e68eac972e6" />
+
+多维空间中点的相对距离 实际就为各token语义的近似程度
+
+<img width="629" height="356" alt="image" src="https://github.com/user-attachments/assets/5163bf2b-f781-4c1c-9dc8-0cf3faf5d225" />
+<img width="634" height="362" alt="image" src="https://github.com/user-attachments/assets/94c59757-cc67-4484-b4ad-eff560ba987a" />
+
+“相对应的位置中容易发现相对应的语义”  eg.此处德国与意大利相对应 希特勒与墨索里尼相对应，两个向量差几乎相等
+
+————两向量的点积 可以被看作是衡量二者对齐程度的一种方法
+（因为向量的方向具有语义意义，所以粗略的讲可以根据点积的正负以及绝对值大小来判断语义近似程度；eg.见下图
+
+<img width="634" height="360" alt="image" src="https://github.com/user-attachments/assets/a182c93a-425a-4cb3-a49c-f8a60c2944c7" />
+
+**对transformer的意义
+嵌入空间的向量，不仅代表了token本身的语义，还具有空间位置信息
+更重要的是这些向量能“结合上下文语境”
 
 
