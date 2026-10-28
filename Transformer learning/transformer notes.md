@@ -181,8 +181,25 @@ Q？嵌入矩阵中是一个token对应一个列向量还是就是一个词对�
 
 <img width="634" height="360" alt="image" src="https://github.com/user-attachments/assets/a182c93a-425a-4cb3-a49c-f8a60c2944c7" />
 
-**对transformer的意义
-嵌入空间的向量，不仅代表了token本身的语义，还具有空间位置信息
-更重要的是这些向量能“结合上下文语境”
+**对transformer的意义：
+嵌入空间的向量，不仅代表了token本身的语义，还具有空间位置信息；
+更重要的是这些向量能“结合上下文语境”；
+<img width="635" height="355" alt="image" src="https://github.com/user-attachments/assets/e835eac1-256b-445d-b55a-bf93d0e16a73" />
 
+原本的基础向量/简单语义 可能会基于上下文模块的信息补充，从而被拖拽向空间中的其他方向；
+进而对真实的语义进行更大程度的模拟。
+“构建能够预测下一个单词的模型时 目标就是使其能有效结合上下文信息”
+
+<img width="634" height="359" alt="image" src="https://github.com/user-attachments/assets/3fe4e335-38fd-4b11-b9b9-8012e6acf7f0" />
+
+第一步 划分输入为token 向量仅编码单个token含义
+
+<img width="631" height="338" alt="image" src="https://github.com/user-attachments/assets/0146d565-e89e-49b4-bd12-f5a8dcc45e50" />
+
+第二步 流经注意力模块作用，“结合上下文，模块拖拽，丰富原本向量的含义”
+
+<img width="632" height="347" alt="image" src="https://github.com/user-attachments/assets/7cf881ef-8676-4f9a-8a29-a9bc3693d163" />
+<img width="628" height="356" alt="image" src="https://github.com/user-attachments/assets/37b404fa-a205-47ad-970f-594d6857e39f" />
+
+“上下文长度”，限制transformer在预测下一个词时所能结合的上下文文本量。
 
