@@ -138,10 +138,12 @@ GPT :Genertive Pre-trained Transformer 注意此处的generative指的是生成�
 
 反向传播方法对模型结构有要求：
 <img width="633" height="380" alt="image" src="https://github.com/user-attachments/assets/4267ef4b-7a2d-43cc-94a9-706ea592b358" />
+
 数组的维数没有限制
 
 <img width="629" height="367" alt="image" src="https://github.com/user-attachments/assets/693ac017-4ec5-4140-a256-0d96def4ab47" />
 <img width="635" height="362" alt="image" src="https://github.com/user-attachments/assets/e0353207-8b99-48c7-8501-4a56e57b6e66" />
+
 注意权重矩阵中的每一个权重值都是“可调的”，作为变换工具
 
 <img width="635" height="374" alt="image" src="https://github.com/user-attachments/assets/eb01831c-7be3-44b3-acf1-28033e274090" />
@@ -156,4 +158,8 @@ Embedding matrix（基于预设词汇库）
 将输入文本分成若干token，再转为向量时所需用到的矩阵————每个单词对应一组列向量
 
 Q？嵌入矩阵中是一个token对应一个列向量还是就是一个词对应一个列向量，token的包含范围会随着训练样本的不断增加而改变吗？比如说原本1个token对应一个单词，后来1个token对应一个词组（缓存命中？合并同类项，减少重复建设花费？）
+
 <img width="635" height="380" alt="image" src="https://github.com/user-attachments/assets/fd9b44ea-8458-4784-bd92-06cd6f263a75" />
+<img width="632" height="358" alt="image" src="https://github.com/user-attachments/assets/53b0257e-820c-4bd6-9d6b-9a5a627f820f" />
+
+
