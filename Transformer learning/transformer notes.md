@@ -1,12 +1,12 @@
 day 1 10.24
-
+\
 初步尝试使用GitHub
 
-transformer part
+transformer part\
 
-有关深度学习和神经网络的基本运作方式进行了初步了解，3B1B深度学习part1，以图像识别（28*28pixels 0-9数字图像识别）举例
+有关深度学习和神经网络的基本运作方式进行了初步了解，3B1B深度学习part1，以图像识别（28*28pixels 0-9数字图像识别）举例\
 
-卷积神经网络，上一层所有神经元的激活值会对下一层神经元的激活值产生影响，权重 偏置值 矩阵形式进行计算 sigmoid映射用于压缩加权和至0-1的范围内
+卷积神经网络，上一层所有神经元的激活值会对下一层神经元的激活值产生影响，权重 偏置值 矩阵形式进行计算 sigmoid映射用于压缩加权和至0-1的范围内\
 
 <img width="2348" height="1320" alt="dd2e1ea2ba2f3967f5616c92b87882d6" src="https://github.com/user-attachments/assets/0c86b3c3-d31c-4b68-891f-2a0ac800042c" />
 (有关具体计算公式）
@@ -17,11 +17,11 @@ transformer part
 但后面又不采用sigmoid 转用RELU（Rectified Linear unit)  原因？？
 有关sigmoid与RELU差异
 <img width="2459" height="598" alt="1a6767a4704eb6296c89173aff800ed3" src="https://github.com/user-attachments/assets/15d2a4d0-409f-4549-b956-84fa781a00e4" />
-
-
-
+\
+\
+\
 day 2 10.25
-
+\
 (3B1B 深度学习2)
 关键：虽然对于神经网络已知该如何计算输出的灰度值，但对于层级之间的权重值和偏置的设置方法尚未提及
 
@@ -48,9 +48,9 @@ day 2 10.25
 <img width="632" height="338" alt="image" src="https://github.com/user-attachments/assets/956c90ab-0de7-47bd-ae55-b983ce5434bd" />
 
 “网络倾向收敛到的各个局部最小值，其实都差不多一样大”
-
-
-
+\
+\
+\
 （3B1B深度学习3 反向传播算法【BP】）
 作用：用于求上面所提及的那个“能使代价函数下降最快”的 具有13000+个变量的梯度向量
 
@@ -80,9 +80,9 @@ summary：反向传播算法 算的是单个训练样本想怎样修改权重和
 <img width="629" height="353" alt="image" src="https://github.com/user-attachments/assets/9fa5f83f-f49a-4e69-b8f0-843aeaa1d7d3" />
 
 “所有包括神经网络在内的机器学习，要让他们工作就需要大量的样本范例。所以机器学习领域的人，最熟悉的一个难关，莫过于获取标记好的训练数据”
-
-
-
+\
+\
+\
 day 3 10.26
 (3B1B深度学习4 有关反向传播算法的微积分解释)
 
@@ -105,8 +105,9 @@ zL关于wL的偏导体现了：权重的改变量对最后一层的影响，由�
 单层多神经元时 几乎和单神经元时没区别。最主要的区别在于总代价函数对上一层的激活值求偏导，此时上一层的a激活值可能会通过j种路径对下一层产生影响（设下一层有j个神经元），因此要将影响相加。
 
 <img width="632" height="368" alt="image" src="https://github.com/user-attachments/assets/b3467e19-950a-4269-a208-3d00d7f28b0e" />
-
-
+\
+\
+\
 day 4 10.28
 (3B1B 深度学习系列5 what is GPT? 直观理解transformer)
 
@@ -204,7 +205,7 @@ Q？嵌入矩阵中是一个token对应一个列向量还是就是一个词对�
 “上下文长度”，限制transformer在预测下一个词时所能结合的上下文文本量。
 
 最后一步：
-将上下文中的最后一个向量，映射到一个包含50000个值的列表（回忆神经网络，等式左边前一个矩阵由权重和偏置构成，后一个列向量矩阵是本次使用的样本数据）。矩阵乘法后得到一个列向量，再利用归一化函数（softmax等）将得到的列向量转化为概率分布；
+将上下文中的最后一个向量，映射到一个包含50000个值的列表（回忆神经网络，等式左边前一个矩阵由权重和偏置构成，后一个列向量矩阵是本次使用的样本数据）。矩阵乘法后得到一个列向量，再利用归一化函数（softmax等）将得到的列向量转化为概率分布；\
 
 <img width="631" height="377" alt="image" src="https://github.com/user-attachments/assets/49f4c0fb-f774-4b13-97d7-fe20f21f58e7" />
 
@@ -214,3 +215,35 @@ Q？为什么只采用上下文中的最后一个向量？而不像之前神经�
 初始值随机 但将在训练过程中学习；\
 每行对应词汇库中的一个词，每列对应一个嵌入维度；\
 <img width="635" height="367" alt="image" src="https://github.com/user-attachments/assets/fdba4165-6e96-4c9d-84a3-26f809cb143a" />
+
+
+<img width="635" height="359" alt="image" src="https://github.com/user-attachments/assets/36a936ae-8004-41bb-8877-861b3c047c99" />\
+嵌入矩阵与解嵌入矩阵之间的关系\
+形状上像转置\
+但实际内容：（一个管“查词→语义向量”，一个管“语义向量→词表打分”）
+\
+\
+--有关softmax函数（在transformer推测下一个词语的最后一步，将算得的列向量归一化为各词语的概率）\
+<img width="620" height="346" alt="image" src="https://github.com/user-attachments/assets/29534882-a9d5-489b-b152-abec4dd951a7" />
+<img width="635" height="357" alt="image" src="https://github.com/user-attachments/assets/1d471840-49be-456a-af6d-9533d22f3089" />\
+Temp，可用于控制预测文本的“想象力”？T越低则对于输入中权重大的概率越高（例如Temp为0表示模型总是选择最可能的词，往其他方面的尝试就少了）T越高则概率分布相对越平均\
+<img width="632" height="356" alt="image" src="https://github.com/user-attachments/assets/2ce81113-8aa5-4d4d-b6d8-9d94285a463f" />
+<img width="635" height="368" alt="image" src="https://github.com/user-attachments/assets/4276dd02-19ad-4bb8-8fed-e927be1b28dc" />
+
+<img width="635" height="379" alt="image" src="https://github.com/user-attachments/assets/7927c3bd-9ef7-4801-bad0-026f0f2c573a" />
+一般来说API不会允许选择2以上的Temp。\
+
+未归一化的输入“Logits”
+<img width="632" height="371" alt="image" src="https://github.com/user-attachments/assets/f87fb2bc-0c58-4840-9a44-ecc555ecdb41" />
+\
+\
+transformer直观理解part summary：\
+输入初始文本\
+流经词嵌入网络（包含注意力模块等）\
+在最后取上下文矩阵的最后一个向量与解嵌入矩阵相乘->得到未归一量--Logits\
+经过softmax归一化获得下一个词语的可能选项的对应概率\
+进行推测。\
+\
+附上一些关键回顾
+<img width="633" height="375" alt="image" src="https://github.com/user-attachments/assets/b7ee9571-ee45-49d2-83e4-be4655b357a3" />
+
