@@ -9,6 +9,7 @@ https://www.doubao.com/thread/xGqfQ7cGlOSsKbEiT
 
 
 (4)有关transformer实现词语预测，其最后一步流程的问题
+
 主要疑问点：为什么在预测时只采用上下文中的最后一个向量？而不像之前神经网络那样每个样本点都要输入，用来进行反向传播，优化权重矩阵？
 解答：
 <img width="743" height="591" alt="image" src="https://github.com/user-attachments/assets/aacfac07-d3e2-4dd4-93af-055f162d3a7e" />
