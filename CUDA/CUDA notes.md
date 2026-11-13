@@ -1,4 +1,3 @@
-11.13/
 （1）what is CUDA & function；\
 CUDA（Compute Unified Device Architecture）是 NVIDIA 推出的并行计算平台和编程模型\
 让开发者能利用 GPU（显卡）进行通用计算，而不只用于图形渲染。\
